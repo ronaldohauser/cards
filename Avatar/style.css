@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'PT Sans', sans-serif;
+}
+body 
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: linear-gradient(#007bb2,#0d1423);
+}
+.cartao 
+{
+	position: relative;
+	width: 320px;
+	height: 450px;
+	border-radius: 20px;
+	overflow: hidden;
+	box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+.card .poster
+{
+	position: relative;
+	overflow: hidden;
+}
+.cartao .poster::before 
+{
+	content: '';
+	position: absolute;
+	bottom: -180px;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(0deg,#1064a6 50%,transparent);
+	transition: 0.5s;
+	z-index: 1;
+}
+.cartao:hover .poster::before 
+{
+	bottom: 0px;
+}
+.cartao .poster img 
+{
+	width: 100%;
+	transition: 0.5s;
+}
+.cartao:hover .poster img 
+{
+	transform: translateY(-50px);
+	filter: blur(5px);
+}
+.cartao .detalhes 
+{
+	position: absolute;
+	bottom: -175px;
+	left: 0;
+	padding: 20px;
+	width: 100%;
+	z-index: 2;
+	transition: 0.5s;
+}
+.cartao:hover .detalhes 
+{
+	bottom: 0px;
+}
+.cartao .detalhes .logo 
+{
+	max-width: 180px;
+}
+.cartao .detalhes h3 
+{
+	font-size: 0.8em;
+	color: #fff;
+}
+.cartao .detalhes .avaliacao 
+{
+	position: relative;
+	padding: 5px 0;
+}
+.cartao .detalhes .avaliacao .fa-star 
+{
+	color: #f7f406;
+	font-size: 1em;
+}
+.cartao .detalhes .avaliacao span 
+{
+	color: #fff;
+	margin-left: 5px;
+}
+.cartao .detalhes .tags 
+{
+	position: relative;
+	margin-top: 5px;
+}
+.cartao .detalhes .tags span 
+{
+	padding: 2px 5px;
+	color: #fff;
+	background: #03a8f5;
+	border-radius: 4px;
+}
+.cartao .detalhes .tags span:nth-child(2)
+{
+	background: #ff5722;
+}
+.cartao .detalhes .info 
+{
+	color: #fff;
+	margin-top: 20px;
+}
+.cartao .detalhes .elenco 
+{
+	position: relative;
+}
+.cartao .detalhes .elenco h4 
+{
+	color: #fff;
+	margin-top: 10px;
+}
+.cartao .detalhes .elenco ul 
+{
+	position: relative;
+	display: flex;
+	gap: 10px;
+	margin-top: 10px;
+}
+.cartao .detalhes .elenco ul li 
+{
+	list-style: none;
+	width: 35px;
+	height: 35px;
+	overflow: hidden;
+	border-radius: 50%;
+	border: 2px solid #fff;
+}
+.cartao .detalhes .elenco ul li img 
+{
+	max-width: 100%;
+}
