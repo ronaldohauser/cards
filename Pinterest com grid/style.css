@@ -1,0 +1,63 @@
+/* Define margens e preenchimentos como 0 para todos os elementos */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estiliza o contêiner principal */
+.container {
+  max-width: 1400px;
+  margin: 20px auto;
+  column-count: 4;
+  column-gap: 20px;
+}
+
+/* Estiliza as caixas dentro do contêiner */
+.container .box {
+  margin-bottom: 10px;
+  break-inside: avoid;
+  border-radius: 15px;
+  overflow: hidden; /* Adiciona um overflow para cortar as imagens ampliadas */
+  transition: transform 0.3s; /* Adiciona uma transição suave ao redimensionar as imagens */
+}
+
+/* Estiliza as imagens dentro das caixas */
+.container .box img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s; /* Adiciona uma transição suave ao redimensionar as imagens */
+}
+
+/* Aplica um redimensionamento suave nas caixas e nas imagens quando selecionadas */
+.container .box:hover,
+.container .box:focus {
+  transform: scale(1.05); /* Aumenta em 5% o tamanho das caixas quando selecionadas */
+}
+
+.container .box:hover img,
+.container .box:focus img {
+  transform: scale(1.1); /* Aumenta em 10% o tamanho das imagens quando selecionadas */
+}
+
+/* Altera o layout para 3 colunas quando a largura da tela é menor que 1200px */
+@media (max-width: 1200px) {
+  .container {
+    column-count: 3;
+    width: calc(100% - 40px);
+  }
+}
+
+/* Altera o layout para 2 colunas quando a largura da tela é menor que 768px */
+@media (max-width: 768px) {
+  .container {
+    column-count: 2;
+  }
+}
+
+/* Altera o layout para 1 coluna quando a largura da tela é menor que 480px */
+@media (max-width: 480px) {
+  .container {
+    column-count: 1;
+  }
+}
